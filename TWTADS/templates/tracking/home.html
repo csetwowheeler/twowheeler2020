@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <title>TrackingHomePage</title>
+</head>
+<body>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidHdvd2hlZWxlcnByb2plY3QiLCJhIjoiY2s4cjVkbHFtMDQ0YTNmcDlyZXcwZ3I5diJ9.gKrKCj084Ux-XN6cEppmJg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAsujE5kClKpPArHZDC6UvgZow1LrrJk1I",
+    authDomain: "twowheelerproject.firebaseapp.com",
+    databaseURL: "https://twowheelerproject.firebaseio.com",
+    projectId: "twowheelerproject",
+    storageBucket: "twowheelerproject.appspot.com",
+    messagingSenderId: "1015394311225",
+    appId: "1:1015394311225:web:81c29151640f28b7e601e8",
+    measurementId: "G-1647E7D4D6"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</body>
+</html>
+
+
+
