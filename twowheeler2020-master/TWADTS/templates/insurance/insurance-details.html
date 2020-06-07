@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Insurance Details {% endblock title %}
+
+{% block content %}
+
+<!-- begin:: Content Head -->
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+	<div class="kt-subheader__main">
+		<h3 class="kt-subheader__title">
+			Insurance Details </h3>
+		<span class="kt-subheader__separator kt-hidden"></span>
+		<div class="kt-subheader__breadcrumbs">
+			<a href="{% url 'Main:user_dashbord' %}" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+			<span class="kt-subheader__breadcrumbs-separator"></span>
+			<a  class="kt-subheader__breadcrumbs-link">
+				Insurance </a>
+			<span class="kt-subheader__breadcrumbs-separator"></span>
+			<a href="{% url 'Insurance:insurance_detail' %}" class="kt-subheader__breadcrumbs-link">
+				Insurance Details</a>
+			<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+		</div>
+	</div>
+</div>
+
+<!-- end:: Content Head -->
+<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+	<div class="kt-portlet kt-portlet--tabs">
+		<div class="kt-portlet__body">
+			<div class="tab-content">
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">Insurance Details: </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">ID</dt><dd class="col-sm-7">#203045</dd>
+							<dt class="col-sm-5">Insurance ID:</dt><dd class="col-sm-7">AGB545ABSAN465564</dd>
+							<dt class="col-sm-5">Policy No: </dt><dd class="col-sm-7">A8545DHDB84444</dd>
+							<dt class="col-sm-5">Insurance Type:</dt><dd class="col-sm-7"> Zero Depth</dd>
+							<dt class="col-sm-5">carrier Type:</dt><dd class="col-sm-7">Tertiary</dd>
+							<dt class="col-sm-5">Start Date Stop Date </dt><dd class="col-sm-7">05/31/2020  06/05/2020</dd>
+							<dt class="col-sm-5">Insurance Carry Code: </dt><dd class="col-sm-7">1646841541</dd>
+							<dt class="col-sm-5">Upload Insurance Copy</dt><dd class="col-sm-7"><button type="button" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button>&nbsp;</dd>													</dd>
+						</dl>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- begin:: Content -->
+{% endblock content %}

@@ -1,0 +1,19 @@
+/* 
+// 1. General
+*/
+
+
+a {
+    text-decoration: none !important;
+    outline: none;
+}
+body {
+    font-family: $font-primary;
+    color: $dark;
+    background: $body-bg;
+    font-size: 15px;
+}
+p {
+    line-height: 1.8;
+}
+

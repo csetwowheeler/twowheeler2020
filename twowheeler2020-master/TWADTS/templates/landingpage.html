@@ -1,0 +1,767 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Vehicle Accident Detection System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="Themesdesign" name="author" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+
+    <!-- icon -->
+    <link href="{% static 'css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pe-icon-7.css' %}" />
+
+    <!--Slider-->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" />
+
+    <!-- css -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/styless.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">  
+</head>
+
+<body>
+
+    {% comment %} <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark navbar-light">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand logo" href="{% url 'Main:landing'%}">
+                    <img src="{% static 'images/light-logo.png' %}" alt="" class="logo-light" height="21">
+                    <img src="{% static 'images/dark-logo.png' %}" alt="" class="logo-dark" height="21">
+            </a>
+            <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+                    <li class="nav-item active">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#counter" class="nav-link">Package</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#clients" class="nav-link">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'Users:login' %}" class="nav-link">Sign In </a>
+                    </li>
+                </ul>
+                <div class="call-no">
+                    <a href="#" class="nav-link text-white"><i class="mdi mdi-phone mr-1"></i> +00 1234 5678 90</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="hero-6-bg position-relative vh-100 d-flex align-items-center" style="background: url({% static 'images/hero-6-bg.jpg' %}) center center no-repeat;" id="home">
+        <div class="bg-overlay op-75"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                   <div class="hero-6-title-content text-center">
+                       <div class="hero-6-title-icon mb-4">
+                           <i class="mdi mdi-axis-arrow mdi-spin text-white h2"></i>
+                       </div>
+                    <h1 class="text-white hero--title font-weight-light line-height-1_4 mb-4">Vehicle Accident Detection System</h1>
+                    <p class="text-white-70">Powered By Marathwada Insitute of Technology</p>
+                    <form action="/signup/" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-warning mt-4" type="submit">Register Now <span class="ml-2 right-icon">&#8594;</span></button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Service Start -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="title text-center mb-5">
+                        <h3 class="font-weight-normal text-dark">Our <span class="text-warning">Services</span></h3>
+                        <p class="text-muted">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box service-warning">
+                        <div class="mb-5">
+                            <i class="pe-7s-map-2 service-icon"></i>
+                        </div>
+                        <h5 class="service-title text-dark font-weight-normal pt-1 mb-4">GPS Location Monitoring</h5>
+                        <p class="text-muted service-subtitle mb-4">Location Sharing gives family members a view of each other’s recent and real-time whereabouts.</p>
+                        <a href="#" class="read-more-icon"><span class="right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box service-warning">
+                        <div class="mb-5">
+                            <i class="pe-7s-clock service-icon"></i>
+                        </div>
+                        <h5 class="service-title text-dark font-weight-normal pt-1 mb-4">SMS & E-Mail Services</h5>
+                        <p class="text-muted service-subtitle mb-4">SMS & Email Alert Services gives alert to the user for his tracking Detection sysetm with some popup and alert notifictaions.</p>
+                        <a href="#" class="read-more-icon"><span class="right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box service-warning">
+                        <div class="mb-5"> 
+                            <i class="pe-7s-credit service-icon"></i>
+                        </div>
+                        <h5 class="service-title text-dark font-weight-normal pt-1 mb-4">User Friendly</h5>
+                        <p class="text-muted service-subtitle mb-4">A User Friendly Dashboard system to be easily navigate by the users easy to handle .</b></p>
+                        <a href="#" class="read-more-icon"><span class="right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box service-warning">
+                        <div class="mb-5">
+                            <i class="pe-7s-plus service-icon"></i>
+                        </div>
+                        <h5 class="service-title text-dark font-weight-normal pt-1 mb-4">Medical System</h5>
+                        <p class="text-muted service-subtitle mb-4">Medical reports of users are stored and processed safey for the medical operations.</p>
+                        <a href="#" class="read-more-icon"><span class="right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box service-warning">
+                        <div class="mb-5">
+                            <i class="pe-7s-car service-icon"></i>
+                        </div>
+                        <h5 class="service-title text-dark font-weight-normal pt-1 mb-4">Insurance System</h5>
+                        <p class="text-muted service-subtitle mb-4">Insurance system to settle with our insurance experts. imsurance sattlement assistance </p>
+                        <a href="#" class="read-more-icon"><span class="right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box service-warning">
+                        <div class="mb-5">
+                            <i class="pe-7s-call service-icon"></i>
+                        </div>
+                        <h5 class="service-title text-dark font-weight-normal pt-1 mb-4">Assistance Helpline</h5>
+                        <p class="text-muted service-subtitle mb-4">Assistance helpline for your query and doubts.complate 24/7 call assistance email assistance and sms Assistance </p>
+                        <a href="#" class="read-more-icon"><span class="right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service End -->
+
+    <!-- About us Start -->
+    <section class="section bg-light" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="title text-center mb-5">
+                        <h3 class="font-weight-normal text-dark">About <span class="text-warning">Us</span></h3>
+                        <p class="text-muted">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="font-weight-light line-height-1_6 text-dark mb-4">Passionate About Provoding Best Service.</h2>
+                </div>
+                <div class="col-md-7 offset-md-1">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6 class="text-dark font-weight-light f-20 mb-3">Our Mission</h6>
+                            <p class="text-muted font-weight-light">At vero eos accusamus iusto odio dignissim ducimus a blandi praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sit occaecati cupiditate provident similique sunt.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-dark font-weight-light f-20 mb-3">Our Vision</h6>
+                            <p class="text-muted font-weight-light">Temporibus autem quibusdam et aut officiis debitis that aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae at Itaque earum rerum hic tenetur sapiente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About us End -->
+
+    <!-- Features Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="title text-center mb-5">
+                        <h3 class="font-weight-normal text-dark">Our <span class="text-warning">Features</span></h3>
+                        <p class="text-muted">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-5" style="background: url({% static 'images/features/features-bg.png' %}) center center">
+                    <div class="features-img">
+                        <img src="{% static 'images/features/img-1.png' %}" alt="" class="img-fluid d-block mx-auto">
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <div class="features-box mt-5 mt-sm-0 mb-4">
+                        <div class="features-icon my-4">
+                            <i class="mdi mdi-laptop-mac"></i>
+                        </div>
+                        <h5 class="text-dark font-weight-normal mb-3 pt-3">Activity Reporting</h5>
+                        <p class="text-muted mb-3 f-15">Et harum quidem rerum facilise expedita distinctio nam libero tempore cum soluta nobis as eligendi optio cumque nihil quis nostrum exercitationem impedit minus omnis repellendus.</p>
+                        <a href="#" class="f-16 text-warning">Read More <span class="right-icon ml-2">&#8594;</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5">
+                <div class="col-md-6">
+                    <div class="features-box mb-4">
+                        <div class="features-icon my-4">
+                            <i class="mdi mdi-account-group"></i>
+                        </div>
+                        <h5 class="text-dark font-weight-normal mb-3 pt-3">Team Management</h5>
+                        <p class="text-muted mb-3 f-15">Sed perspiciatis unde omnis natus error voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo excepturi sint occaecati cupiditate architecto.</p>
+                        <a href="#" class="f-16 text-warning">Read More <span class="right-icon ml-2">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-md-5 offset-md-1 mt-5 mt-sm-0" style="background: url({% static 'images/features/features-bg.png' %}) center center">
+                    <div class="features-img">
+                        <img src="{% static 'images/features/img-2.png' %}" alt="" class="img-fluid d-block mx-auto">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mt-5">
+                <div class="col-md-5" style="background: url({% static 'images/features/features-bg.png' %}) center center">
+                    <div class="features-img">
+                        <img src="{% static 'images/features/img-3.png' %}" alt="" class="img-fluid d-block mx-auto">
+                    </div>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <div class="features-box mt-5 mt-sm-0 mb-4">
+                        <div class="features-icon my-4">
+                            <i class="mdi mdi-chart-bell-curve"></i>
+                        </div>
+                        <h5 class="text-dark font-weight-normal mb-3 pt-3">Marketing Analysis</h5>
+                        <p class="text-muted mb-3 f-15">At vero eos accusamus iusto odio soluta nobis est eligendi optio dignissimos ducimus qui blanditiis praesentium as voluptatum deleniti corrupti quos dolores molestias occaecati.</p>
+                        <a href="#" class="f-16 text-warning">Read More <span class="right-icon ml-2">&#8594;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features End -->
+
+    <!-- Counter Start -->
+
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="title text-center mb-5">
+                <h3 class="font-weight-normal text-dark">Our <span class="text-warning">Packages</span></h3>
+                <p class="text-muted">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem.</p>
+            </div>
+        </div>
+    </div>
+    <section class="price-comparison">
+      <div class="row" id="counter">
+        <div class="price-column">
+            <div class="price-header">
+              <div class="plan-name">STARTER</div>
+              <div class="price">
+                  <div class="rupee-sign">Rs</div>
+                  Free
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Location Monitoring
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Document Upload
+            </div>
+            <div class="feature ">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Assistance Helpline
+            </div>
+            <div class="feature ">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Sms And Email Alerts
+            </div>
+            <div class="feature inactive">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Insurance and Medical Facility
+            </div>
+            <div class="feature inactive">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Crash Deteaction
+            </div>
+            <button class="cta">Buy Now</button>
+          </div>
+          <div class="price-column popular">
+            <div class="most-popular">STANDARD</div>
+            <div class="price-header">
+              <div class="price">
+                <div class="rupee-sign">Rs</div>
+                100
+                <div class="per-month">/mo</div>
+              </div>
+              
+            </div>
+            <div class="divider"></div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Location Monitoring
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Document Upload
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Assistance Helpline
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Sms And Email Alerts
+            </div>
+            <div class="feature ">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Insurance and Medical Facility
+            </div>
+            <div class="feature inactive">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Crash Deteaction
+            </div>
+            <div class="feature inactive">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Monthly Status Reports
+            </div>
+            <button class="cta">Buy Now</button>
+          </div>
+          <div class="price-column">
+            <div class="price-header">
+              
+              <div class="plan-name">PROFESSIONAL</div>
+              <div class="price">
+                  <div class="rupee-sign">Rs</div>
+                  150
+                  <div class="per-month">/mo</div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Location Monitoring
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Document Upload
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Assistance Helpline
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Sms And Email Alerts
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Insurance and Medical Facility
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Crash Deteaction
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Monthly Status Reports
+            </div>
+            <div class="feature">
+              <img src="{% static 'images/icon/check-circle.svg' %}">
+              Offers
+            </div>
+            <button class="cta">Buy Now</button>
+          </div>
+               
+             
+                
+            </div>
+    </section>
+    <!-- Counter End -->
+
+    <!-- Testimonial Start -->
+    <section class="section bg-light" id="clients">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="title text-center mb-5">
+                        <h3 class="font-weight-normal text-dark">Our <span class="text-warning">Clients</span></h3>
+                        <p class="text-muted">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3 class="font-weight-normal mt-3 line-height-1_4">Some Words From Our <span class="font-weight-medium text-warning">Happy Clients </span></h3>
+                    <div class="testi-border my-4"></div>
+                    <p class="text-muted">Itaque earum rerum tenetur a sapiente delectus ut aut reiciendis voluptatibus maiores alias consequatur.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="testi-content m-3 position-relative">
+                                <div class="testi-box p-4">
+                                    <ul class="list-unstyled f-15 text-warning mb-2">
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted position-relative mb-0 f-14"><span class="f-20 mr-1">"</span> Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam. <span class="f-16">"</span></p>
+                                </div>
+                                <div class="testi-user mt-4">
+                                    <div class="media align-items-center">
+                                        <img src="{% static 'images/user/img-1.jpg' %}" alt="" class="mr-3 img-fluid d-block rounded-circle">
+                                        <div class="media-body">
+                                            <h6 class="mb-0 text-dark f-15">Roberta Guevara</h6>
+                                            <p class="text-muted mb-0 f-14">Web Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- owl item and -->
+                        <div class="item">
+                            <div class="testi-content m-3 position-relative">
+                                <div class="testi-box p-4">
+                                    <ul class="list-unstyled f-15 text-warning mb-2">
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted position-relative mb-0 f-14"><span class="f-20 mr-1">"</span> Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam. <span class="f-16">"</span></p>
+                                </div>
+                                <div class="testi-user mt-4">
+                                    <div class="media align-items-center">
+                                        <img src="{% static 'images/user/img-2.jpg' %}" alt="" class="mr-3 img-fluid d-block rounded-circle">
+                                        <div class="media-body">
+                                            <h6 class="mb-0 text-dark f-15">Roberta Guevara</h6>
+                                            <p class="text-muted mb-0 f-14">Web Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- owl item and -->
+                        <div class="item">
+                            <div class="testi-content m-3 position-relative">
+                                <div class="testi-box p-4">
+                                    <ul class="list-unstyled f-15 text-warning mb-2">
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted position-relative mb-0 f-14"><span class="f-20 mr-1">"</span> Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam. <span class="f-16">"</span></p>
+                                </div>
+                                <div class="testi-user mt-4">
+                                    <div class="media align-items-center">
+                                        <img src="{% static 'images/user/img-3.jpg' %}" alt="" class="mr-3 img-fluid d-block rounded-circle">
+                                        <div class="media-body">
+                                            <h6 class="mb-0 text-dark f-15">Roberta Guevara</h6>
+                                            <p class="text-muted mb-0 f-14">Web Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- owl item and -->
+                        <div class="item">
+                            <div class="testi-content m-3 position-relative">
+                                <div class="testi-box p-4">
+                                    <ul class="list-unstyled f-15 text-warning mb-2">
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted position-relative mb-0 f-14"><span class="f-20 mr-1">"</span> Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam. <span class="f-16">"</span></p>
+                                </div>
+                                <div class="testi-user mt-4">
+                                    <div class="media align-items-center">
+                                        <img src="{% static 'images/user/img-4.jpg' %}" alt="" class="mr-3 img-fluid d-block rounded-circle">
+                                        <div class="media-body">
+                                            <h6 class="mb-0 text-dark f-15">Roberta Guevara</h6>
+                                            <p class="text-muted mb-0 f-14">Web Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- owl item and -->
+                        <div class="item">
+                            <div class="testi-content m-3 position-relative">
+                                <div class="testi-box p-4">
+                                    <ul class="list-unstyled f-15 text-warning mb-2">
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    </ul>
+                                    <p class="text-muted position-relative mb-0 f-14"><span class="f-20 mr-1">"</span> Sed ut perspiciatis unde omnis at iste natus error a voluptatem accusantium doloremque totam. <span class="f-16">"</span></p>
+                                </div>
+                                <div class="testi-user mt-4">
+                                    <div class="media align-items-center">
+                                        <img src="{% static 'images/user/img-5.jpg' %}" alt="" class="mr-3 img-fluid d-block rounded-circle">
+                                        <div class="media-body">
+                                            <h6 class="mb-0 text-dark f-15">Roberta Guevara</h6>
+                                            <p class="text-muted mb-0 f-14">Web Developer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- owl item and -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial End -->
+
+    <!-- Contact Us Start -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="title text-center mb-5">
+                        <h3 class="font-weight-normal text-dark">Get In <span class="text-warning"> Touch</span></h3>
+                        <p class="text-muted">Maecenas tempus tellus eget condimentum rhoncus sem quam semper libero pulvinar hendrerit id lorem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-address">
+                        <h4 class="text-dark mb-4">Contact Info</h4>
+                        <p class="text-muted f-15">Sed perspici unade omnis natus error sit voluptatem accusantium doloremque minus cumque.</p>
+                        <p class="text-muted f-15 mb-4">Et harum quidem rerum facilis est et expedita sit distinctio at libero.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-address">
+                                <h5 class="text-dark mb-3 f-16">Address - A</h5>
+                                <p class="text-muted f-15">3165 Roosevelt Wilson Riverside, CA 92507</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-address">
+                                <h5 class="text-dark mb-3 f-16">Address - B</h5>
+                                <p class="text-muted f-15">1121 Bombardier Way Southfield, MI 48075</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 offset-lg-1">
+                    <div class="custom-form mt-4 mt-lg-0">
+                        <div id="message"></div>
+                        <form method="post" action="#" name="contact-form" id="contact-form">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group app-label">
+                                        <label for="name">Name</label>
+                                        <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group app-label">
+                                        <label for="email">Email address</label>
+                                        <input name="email" id="email" type="email" class="form-control" placeholder="Enter your email..">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Enter Subject.." />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label for="comments">Message</label>
+                                        <textarea name="comments" id="comments" rows="3" class="form-control" placeholder="Enter message.."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" id="submit" name="send" class="btn btn-warning">Send Message <i class="mdi mdi-telegram ml-2"></i></button>
+                                    <div id="simple-msg"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us End -->
+
+    <!-- Subscribe Start -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="subscribe-icon">
+                                <img src="{% static 'images/icon/1.png' %}" alt="" class="img-fluid mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="subscribe-icon">
+                                <img src="{% static 'images/icon/2.png' %}" alt="" class="img-fluid mx-auto d-block">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="">
+                                <img src="{% static 'images/icon/3.png' %}" alt="" class="img-fluid mx-auto d-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="text-center mt-5 mb-4">
+                        <h6 class="text-muted font-weight-normal">Subscribe To Our Newsletter For New Content, <span class="d-block mt-2">Update And Giveaways!</span></h6>
+                    </div>
+                    <div class="text-center subscribe-form mt-4">
+                        <form action="#">
+                            <input type="text" placeholder="Your Email Address...">
+                            <button type="submit" class="btn btn-warning">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Subscribe End -->
+
+    <!-- footer Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a href="layout-one-6.html"><img src="{% static 'images/dark-logo.png' %}" alt="" class="logo-dark" height="26" /></a>
+                        <p class="text-muted mt-4 mb-2">Yourcompanyemailid@gmail.com</p>
+                        <h6 class="text-muted font-weight-normal">+00 1234-5678-90</h6>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6 class="footer-list-title text-dark mb-3">Services</h6>
+                            <ul class="list-unstyled company-sub-menu">
+                                <li><a href="">Digital Marketing</a></li>
+                                <li><a href="">Business Analysis</a></li>
+                                <li><a href="">How It Work</a></li>
+                                <li><a href="">Fix & Flip</a></li>
+                                <li><a href="">Social Activation</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="footer-list-title text-dark mb-3">About Us</h6>
+                            <ul class="list-unstyled company-sub-menu">
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="">FAQs</a></li>
+                                <li><a href="">Blog</a></li>
+                                <li><a href="">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="footer-list-title text-dark mb-3">Our Address</h6>
+                            <p class="text-muted f-14">4806 Spring Haven Trail South Orange, NJ 07079</p>
+                            <h6 class="text-muted pb-2">Email: Support@gamil.com</h6>
+                            <ul class="list-unstyled footer-social-list mt-4">
+                                <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="text-center text-muted">
+                        <p class="mb-0 f-15">2020 ©  Design by TVADS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer End -->
+
+    <!-- javascript -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/scrollspy.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <!-- Counter js -->
+    <script src="{% static 'js/counter.int.js' %}"></script>
+    <!-- carousel -->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <!--Particles JS-->
+    <script src="{% static 'js/particles.js' %}"></script>
+    <script src="{% static 'js/particles.app.js' %}"></script>
+    <!-- Main Js -->
+    <script src="{% static 'js/app.js' %}"></script>
+
+</body>
+</html>

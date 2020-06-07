@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}Medical History{% endblock title %}
+{% block content %}
+
+<!-- begin:: Content Head -->
+<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+	<div class="kt-subheader__main">
+		<h3 class="kt-subheader__title">
+			Medical History </h3>
+		<span class="kt-subheader__separator kt-hidden"></span>
+		<div class="kt-subheader__breadcrumbs">
+			<a href="user_dash/user_dashbord.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+			<span class="kt-subheader__breadcrumbs-separator"></span>
+			<a class="kt-subheader__breadcrumbs-link">
+				Medical</a>
+			<span class="kt-subheader__breadcrumbs-separator"></span>
+			<a href="user_dash/medical/medical-history.html" class="kt-subheader__breadcrumbs-link">
+				Medical History</a>
+			<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+		</div>
+	</div>
+</div>
+
+<!-- end:: Content Head -->
+<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+	<div class="kt-portlet kt-portlet--tabs">
+		<div class="kt-portlet__head">
+			<div class="kt-portlet__head-label">
+				<h3 class="kt-portlet__head-title">
+					Medical Details
+				</h3>
+			</div>
+			<div class="kt-portlet__head-toolbar">
+				<ul class="nav nav-tabs nav-tabs-line nav-tabs-line-right" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#kt_portlet_base_demo_1_tab_content" role="tab">
+							<i class="flaticon2-medical-records-1"></i> General Info
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#kt_portlet_base_demo_2_tab_content" role="tab">
+							<i class="flaticon2-medical-records-1"></i> Past Treatments
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#kt_portlet_base_demo_3_tab_content" role="tab">
+							<i class="flaticon2-medical-records-1"></i> Genetic Disorers
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="kt-portlet__body">
+			<div class="tab-content">
+				<div class="tab-pane active" id="kt_portlet_base_demo_1_tab_content" role="tabpanel">
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">General Info : </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">ID</dt><dd class="col-sm-7">#203045</dd>
+							<dt class="col-sm-5">Complete Name: </dt><dd class="col-sm-7">Vinayak Pandit</dd>
+							<dt class="col-sm-5">Enter Weight: </dt><dd class="col-sm-7"> 7\6 kg</dd>
+							<dt class="col-sm-5">Blood Pressure: </dt><dd class="col-sm-7"> 135/88</dd>
+							<dt class="col-sm-5">Emergency Contact No :</dt><dd class="col-sm-7">7276485185</dd>
+							<dt class="col-sm-5">Address Line1: </dt><dd class="col-sm-7">District 6 1352 W.olive Ave </dd>
+							<dt class="col-sm-5">Address Line2:</dt><dd class="col-sm-7">Fresno 359-488-4020</dd>
+							<dt class="col-sm-5">city:</dt><dd class="col-sm-7">Polo Alto</dd>
+							<dt class="col-sm-5">State/Province/Region:</dt><dd class="col-sm-7">Los Angeles</dd>
+							<dt class="col-sm-5">Zip/Postal Code:</dt><dd class="col-sm-7">780456</dd>
+						</dl>
+					</p>
+				</div>
+				<div class="tab-pane" id="kt_portlet_base_demo_2_tab_content" role="tabpanel">
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">Past Treatment : </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">Past Treatment:</dt><dd class="col-sm-7">Yes</dd>
+							<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7">In a medical encounter, a past medical history </br>
+								(abbreviated PMH), is the total sum of a patient's ...</br>
+								 amount, and duration,as well as any past treatment or</br>
+								 drug rehabilitation</dd>
+							<dt class="col-sm-5">Past Reports Uploaded:<dd class="col-sm-7"><button type="button" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button>&nbsp;</dd>
+						</dl>
+					</p>
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">Past Injuries : </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">Past Injuries:</dt><dd class="col-sm-7">Yes</dd>
+							<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7">In a medical encounter, a past medical history </br>
+								(abbreviated PMH), is the total sum of a patient's ...</br>
+								 amount, and duration,as well as any past treatment or</br>
+								 drug rehabilitation</dd>
+							<dt class="col-sm-5">Past Injurie Reports Uploaded:<dd class="col-sm-7"><button type="button" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button>&nbsp;</dd>
+						</dl>
+					</p>
+				</div>
+				<div class="tab-pane" id="kt_portlet_base_demo_3_tab_content" role="tabpanel">
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">Genetic Disorder : </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">Genetic Disorder:</dt><dd class="col-sm-7">Yes</dd>
+							<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7">In a medical encounter, a past medical history </br>
+								(abbreviated PMH), is the total sum of a patient's ...</br>
+								 amount, and duration,as well as any past treatment or</br>
+								 drug rehabilitation</dd>
+							<dt class="col-sm-5">Genetic Disorder Reports Uploaded:<dd class="col-sm-7"><button type="button" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button>&nbsp;</dd>
+						</dl>
+					</p>
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">Ongoing Medicine : </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">Ongoing Medicine:</dt><dd class="col-sm-7">Yes</dd>
+							<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7">In a medical encounter, a past medical history </br>
+								(abbreviated PMH), is the total sum of a patient's ...</br>
+								 amount, and duration,as well as any past treatment or</br>
+								 drug rehabilitation</dd>
+							<dt class="col-sm-5">Upload Your Prescription:<dd class="col-sm-7"><button type="button" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button>&nbsp;</dd>
+						</dl>
+					</p>
+					<p class="text-muted mb-0">
+						<h5 class="kt-section__title kt-section__title-lg">Other Details : </h5>
+						<label></label>
+						<dl class="row mb-0">
+							<dt class="col-sm-5">Other Details You Want To Tell Us:</dt><dd class="col-sm-7">Yes</dd>
+							<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7">In a medical encounter, a past medical history </br>
+								(abbreviated PMH), is the total sum of a patient's ...</br>
+								 amount, and duration,as well as any past treatment or</br>
+								 drug rehabilitation</dd>
+							<dt class="col-sm-5">Your Reports: <dd class="col-sm-7"><button type="button" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button>&nbsp;</dd>
+						</dl>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
