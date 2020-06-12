@@ -735,14 +735,14 @@
 								<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
 									<div class="kt-header__topbar-user">
 										<span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
-										<span class="kt-header__topbar-username kt-hidden-mobile">USER</span>
+										<span class="kt-header__topbar-username kt-hidden-mobile">{{ request.session.fname }}</span>
 										<img class="kt-hidden" alt="Pic" src="{% static 'assets/media/users/300_25.jpg' %}" />
 
 										<!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-										<span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">v</span>
+										<span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">{{ request.session.initial }}</span>
 									</div>
 								</div>
-								<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+								<div class="dropdown-menu dropdow n-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
 
 									<!--begin: Head -->
 									<div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url({% static 'assets/media/misc/bg-1.jpg' %})">
@@ -750,10 +750,10 @@
 											<img class="kt-hidden" alt="Pic" src="{% static 'assets/media/users/300_25.jpg' %}" />
 
 											<!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-											<span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">V</span>
+											<span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success">{{ request.session.initial }}</span>
 										</div>
 										<div class="kt-user-card__name">
-											USER XYZ
+											{{ request.session.fullname }}
 										</div>
 										<!--div class="kt-user-card__badge">
 											<span class="btn btn-success btn-sm btn-bold btn-font-md">23 messages</span>
@@ -804,8 +804,8 @@
 											</div>
 										</a>
 										<div class="kt-notification__custom kt-space-between">
-											<a href="{% url 'Users:logout' %}" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
-											<a href="{% url 'Users:lockscreen' %}" target="_blank" class="btn btn-clean btn-sm btn-bold">Lock Screen</a>
+											<a href="{% url 'Users:logout' %}" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+											<a href="{% url 'Users:lockscreen' %}"  class="btn btn-clean btn-sm btn-bold">Lock Screen</a>
 										</div>
 									</div>
 

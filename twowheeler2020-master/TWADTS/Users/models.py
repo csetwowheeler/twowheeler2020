@@ -6,11 +6,15 @@ class SignUp(models.Model):
 
      Fname = models.CharField(max_length=500)
      Lname = models.CharField(max_length=50)
-     Email= models.CharField(max_length=50)
+     Email= models.CharField(max_length=50, primary_key=True)
      Password = models.CharField(max_length=50)
 
      def __str__(self):
           return self.Email
+
+     def getinitial(self):
+         return self.Fname[0]
+
 
 class Personal_Info(models.Model):
      Email = models.ForeignKey(SignUp, on_delete=models.CASCADE)
@@ -29,7 +33,7 @@ class Personal_Info(models.Model):
           return self.Uname
 
 class Bike_Info(models.Model):
-     Email= models.ForeignKey(SignUp,on_delete=models.CASCADE)
+     Email = models.ForeignKey(SignUp, on_delete=models.CASCADE)
      Bike_Model_Name = models.CharField(max_length=50)
      Bike_No = models.CharField(max_length=50)
      Bike_Reg_No =models.CharField(max_length=50)

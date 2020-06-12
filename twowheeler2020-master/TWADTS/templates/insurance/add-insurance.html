@@ -36,8 +36,10 @@
 						<h3 class="kt-portlet__head-title">Add Insurance Details</h3>
 					</div>
 					<div class="kt-portlet__head-toolbar">
+	<form class="kt-form" id="kt_form" method="post" action="{% url 'Insurance:save_info' %}" enctype="multipart/form-data">
+	{% csrf_token %}
 						<div class="btn-group">
-							<button type="button" class="btn btn-brand">
+							<button type="submit"  class="btn btn-brand">
 								<i class="la la-check"></i>
 								<span class="kt-hidden-mobile">Save</span>
 							</button>
@@ -47,7 +49,6 @@
 					</div>
 				</div>
 				<div class="kt-portlet__body">
-					<form class="kt-form" id="kt_form">
 						<div class="row">
 							<div class="col-xl-2"></div>
 							<div class="col-xl-8">
@@ -57,37 +58,37 @@
 										<div class="form-group row">
 											<label class="col-3 col-form-label">ID</label>
 											<div class="col-9">
-												<input class="form-control" disabled="disabled" type="text" value="#203045">
+												<input class="form-control"  type="number" name="id" value="#203045">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-3 col-form-label">Insurance ID </label>
 											<div class="col-9">
-												<input class="form-control" type="text" value="AGB545ABSAN465564">
+												<input class="form-control" type="text" name=insurance_id value="AGB545ABSAN465564">
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-3 col-form-label">Policy No</label>
 											<div class="col-9">
-												<input class="form-control" type="text" value="A8545DHDB84444">
+												<input class="form-control" type="text" name="policy_no" value="A8545DHDB84444">
 												<span class="form-text text-muted">If you want your invoices addressed to a company. Leave blank to use your full name.</span>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-3 col-form-label">Insurance Type</label>
 											<div class="col-9">
-												<select class="form-control">
-													<option value="AF">Zero Depth</option>
-													<option value="AX">Third Party</option>
+												<select class="form-control" name="insurance_type">
+													<option value="Zero Depth">Zero Depth</option>
+													<option value="Third Party">Third Party</option>
 												</select>
 											</div>
 										</div>
 										<div class="form-group row">
 											<label class="col-3 col-form-label">Carrier Type</label>
 											<div class="col-9">
-												<select class="form-control">
-													<option value="AF">Primary</option>
-													<option value="AX">Tertiary</option>
+												<select class="form-control" name="carrier_type">
+													<option value="Primary">Primary</option>
+													<option value="Tertiary">Tertiary</option>
 												</select>
 											</div>
 										</div>
@@ -95,11 +96,11 @@
 											<label class="col-form-label col-lg-3 col-sm-12">Insurance Start And End Date</label>
 											<div class="col-9">
 												<div class="input-daterange input-group" id="kt_datepicker_5">
-													<input type="text" class="form-control" name="start" />
+													<input type="text" class="form-control" name="startdate" />
 													<div class="input-group-append">
 														<span class="input-group-text"><i class="la la-ellipsis-h"></i></span>
 													</div>
-													<input type="text" class="form-control" name="end" />
+													<input type="text" class="form-control" name="enddate" />
 												</div>
 												<span class="form-text text-muted">Put Here Your Insurance Start and End Date</span>
 											</div>
@@ -108,7 +109,7 @@
 											<label class="col-3 col-form-label">Insurance Carry Code</label>
 											<div class="col-9">
 												<div class="input-group">
-													<input type="text" class="form-control" placeholder="Username" value="1646841541">
+													<input type="text" name="insurance_carrycode"class="form-control" placeholder="Username" value="1646841541">
 												</div>
 											</div>
 										</div>
@@ -122,7 +123,7 @@
 											<div class="col-9">
 												<div class="custom-file" >
 												<!--label>Upload Latest Reports</label-->
-													<input type="file" class="custom-file-input" id="customFile">
+													<input type="file" class="custom-file-input" name="doc">
 													<label class="custom-file-label" for="customFile">Choose file</label>
 												</div>
 											</div>

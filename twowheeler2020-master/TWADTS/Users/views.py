@@ -27,8 +27,12 @@ def signup(request):
             User = SignUp(Fname=Fname, Lname=Lname , Email=Email, Password=Password)
             User.save()
             UserName.UserName=User.Email
-
-            return render(request, 'base.html')
+            request.session.flush()
+            request.session['username'] = UserName.UserName
+            request.session['fname'] = User.Fname
+            request.session['fullname'] = User.Fname+" "+User.Lname
+            request.session['initial'] = User.getinitial()
+            return render(request, 'user_dashbord.html')
 
         else:
             print('password dose not match ')
@@ -43,13 +47,11 @@ def login(request):
     if request.method == "GET":
         return render(request, 'login_pages/login-1.html')
     else:
-
         Email = request.POST['Email']
         Password = request.POST['Password']
         print(Email)
         print(Password)
         try:
-
             go = SignUp.objects.get(Email=Email)
             UserName.UserName = go.Email
             print('2')
@@ -57,8 +59,12 @@ def login(request):
             print(psw)
             if Password == psw:
                 print('valid password')
-                username = {'uname': Email}
-                return render(request, 'base.html')
+                username = {'uname': Email }
+                request.session['username'] = go.Email
+                request.session['fname'] = go.Fname
+                request.session['fullname'] = go.Fname+" "+go.Lname
+                request.session['initial'] = go.getinitial()
+                return render(request, 'user_dashbord.html')
 
             else:
                 print('invalid password')
@@ -68,7 +74,6 @@ def login(request):
         except SignUp.DoesNotExist:
             print('invalid user name')
             return render(request, 'login_pages/login-1.html')
-
             go = None
 
 
@@ -76,11 +81,10 @@ def login(request):
 
 
 def logout(request):
-    print('hiii')
+    request.session.flush()
     return render(request, 'login_pages/login-1.html')
 
 def lockscreen(request):
-
     return render(request, 'login_pages/lockscreen.html')
 
 def forget_password(request):
@@ -165,5 +169,6 @@ def change_password(request):
 
 def email_setting(request):
     return render(request, 'user_settings/email-settings.html')
+
 '''
 background-image: url(&quot;http://keenthemes.com/metronic/preview/default/custom/user/assets/media/users/100_1.jpg&quot;);'''
