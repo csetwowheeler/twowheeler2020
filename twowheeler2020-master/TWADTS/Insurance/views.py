@@ -13,7 +13,15 @@ def add_insurance(request):
 
 
 def insurance_detail(request):
-    return render(request, 'insurance/insurance-details.html')
+    if request.method == 'GET':
+        try:
+            email = request.session['username']
+            user = get_object_or_404(SignUp, Email=email)
+            ins_data = get_object_or_404(Insurance, email=user)
+            return render(request, 'insurance/insurance-details.html', {'ins_data':ins_data})
+        except Exception:
+            return render(request, 'insurance/insurance-details.html', {'no_records':'no_records'})
+
 
 
 def process_insurance(request):
@@ -25,10 +33,10 @@ def insurance_guidlines(request):
 
 def save_info(request):
     if request.method == 'POST':
+
         email = request.session['username']
         user = get_object_or_404(SignUp, Email=email)
 
-        id = int(request.POST['id'])
         insurance_id = request.POST['insurance_id']
         policy_no = request.POST['policy_no']
         insurance_type = request.POST['insurance_type']
@@ -41,24 +49,18 @@ def save_info(request):
         insurance_doc = request.FILES['doc']
         fs = FileSystemStorage()
         file = fs.save(insurance_doc.name, insurance_doc)
-        # Ins = Insurance.objects.create(user=user,insurance_id=insurance_id,policy_no=policy_no,insurance_type=insurance_type,carrier_type=carrier_type,startdate=startdate,enddate=enddate,insurance_carrycode=insurance_carrycode,insurance_doc=file)
-        # Ins.save()
-
-        context_stuff ={
-            'user': user,
-            'id': id,
-            'insurance_id':insurance_id,
-            'policy_no': policy_no,
-            'insurance_type': insurance_type,
-            'carrier_type': carrier_type,
-            'startdate': startdate,
-            'enddate': enddate,
-            'insurance_carrycode': insurance_carrycode,
-            'insurance_doc': insurance_doc,
-            'url':url
-        }
-        for data in context_stuff.values():
-            print(data,type(data))
-
-
-        return HttpResponseRedirect('insurance/add-insurance.html')
+        try:
+            Ins = Insurance.objects.get(email=user)
+            Ins.insurance_id = insurance_id
+            Ins.policy_no = policy_no
+            Ins.insurance_type = insurance_type
+            Ins.carrier_type = carrier_type
+            Ins.startdate = startdate
+            Ins.enddate = enddate
+            Ins.insurance_doc = file
+            Ins.save()
+            return render(request, 'insurance/add-insurance.html')
+        except :
+            Ins = Insurance.objects.create(email=user,insurance_id=insurance_id,policy_no=policy_no,insurance_type=insurance_type,carrier_type=carrier_type,startdate=startdate,enddate=enddate,insurance_carrycode=insurance_carrycode,insurance_doc=file)
+            Ins.save()
+            return render(request, 'insurance/add-insurance.html')

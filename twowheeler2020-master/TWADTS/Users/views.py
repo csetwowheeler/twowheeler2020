@@ -94,15 +94,20 @@ def forget_password(request):
 def personal_information(request):
 
     if request.method == 'GET':
-        User= SignUp.objects.get(Email=UserName.UserName)
+        User= SignUp.objects.get(Email=request.session['username'])
         Fname=User.Fname
         Lname=User.Lname
         Email=User.Email
-        pic=Personal_Info.objects.get(Email__Email=UserName.UserName)
-        Photo=pic.Profile_Pic
-        phone=pic.Phone_no
-        user={'Fname':Fname,'Lname':Lname,'Email':Email,'photo':Photo,'phone':phone}
-        return render(request,'user_settings/profile-settings.html',user)
+        try :
+            pic=Personal_Info.objects.get(Email__Email=UserName.UserName)
+            Photo=pic.Profile_Pic
+            phone=pic.Phone_no
+            user={'Fname':Fname,'Lname':Lname,'Email':Email,'photo':Photo,'phone':phone}
+            return render(request,'user_settings/profile-settings.html',user)
+        except Exception:
+            user={'Fname':Fname,'Lname':Lname,'Email':Email,}
+            return render(request,'user_settings/profile-settings.html',user)
+
     else:
         Uname = request.POST['Uname']
         Profile_Pic = request.FILES['image']

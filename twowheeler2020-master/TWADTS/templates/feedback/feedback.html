@@ -29,6 +29,8 @@
 
 		<div class="row">
 			<div class="col-xl-4">
+		<form action="{% url 'Main:feedback' %}" method="post" >
+			{% csrf_token %}
 
 				<!--begin:: Widgets/Applications/User/Profile4-->
 				<div class="kt-portlet kt-portlet--height-fluid">
@@ -46,20 +48,24 @@
 										</br>
 										<div class="kt-portlet__head-label">
 											<h4 class="kt-portlet__head-title text-center">
+												{% if rating %}
+												Thank You For Rating Us
+												{% else %}
 												How Much Would You Rate Us?
+												{% endif %}
 											</h4>
 										</div>
 										<div class="feedback">
 											<div class="rating">
-												<input type="radio" name="rating" id="rating-5">
+												<input type="radio" name="rating" id="rating-5" value="5" {% if rating == 5 %} checked="checked" {% endif %}>
 												<label for="rating-5"></label>
-												<input type="radio" name="rating" id="rating-4">
+												<input type="radio" name="rating" id="rating-4" value="4" {% if rating == 4 %} checked="checked" {% endif %}>
 												<label for="rating-4"></label>
-												<input type="radio" name="rating" id="rating-3">
+												<input type="radio" name="rating" id="rating-3" value="3" {% if rating == 3 %} checked="checked" {% endif %}>
 												<label for="rating-3"></label>
-												<input type="radio" name="rating" id="rating-2">
+												<input type="radio" name="rating" id="rating-2" value="2" {% if rating == 2 %} checked="checked" {% endif %}>
 												<label for="rating-2"></label>
-												<input type="radio" name="rating" id="rating-1">
+												<input type="radio" name="rating" id="rating-1" value="1" {% if rating == 1 %} checked="checked" {% endif %}>
 												<label for="rating-1"></label>
 												<div class="emoji-wrapper">
 												<div class="emoji">
@@ -164,7 +170,7 @@
 															</div>
 														</div>
 														<div class="kt-portlet__body">
-															<textarea class="form-control" id="kt_maxlength_5" maxlength="50" placeholder="Write Your Feedback Here..." rows="6"></textarea>
+															<textarea class="form-control" id="kt_maxlength_5" name="feedback" maxlength="50" placeholder="Write Your Feedback Here..." rows="6"></textarea>
 															<span class="form-text text-muted"></span>
 														</div>
 													</div>
@@ -179,7 +185,7 @@
 															</div>
 														</div>
 														<div class="kt-portlet__body">
-															<textarea class="form-control" id="kt_maxlength_5" maxlength="50" placeholder="Write Your Feedback Here..." rows="6"></textarea>
+															<textarea class="form-control" id="kt_maxlength_5" name="suggestion" maxlength="50" placeholder="Write Your Feedback Here..." rows="6"></textarea>
 															<span class="form-text text-muted"></span>
 														</div>
 													</div>
@@ -194,16 +200,17 @@
 															</div>
 														</div>
 														<div class="kt-portlet__body">
-															<textarea class="form-control" id="kt_maxlength_5" maxlength="50" placeholder="Write Your Feedback Here..." rows="6"></textarea>
+															<textarea class="form-control" id="kt_maxlength_5" name="issue" maxlength="50" placeholder="Write Your Feedback Here..." rows="6"></textarea>
 															<span class="form-text text-muted"></span>
 														</div>
 													</div>
 												</div>
 											</div>
 											<div class="kt-widget29__actions kt-align-right">
-												<button type="button" class="btn btn-success btn-custom" id="kt_sweetalert_demo_3_3"> Submit</button>
+												<button type="submit" class="btn btn-success btn-custom" id="kt_sweetalert_demo_3_3"> Submit</button>
 											</div>
 										</div>
+							</form>
 										<div class="kt-widget__action">
 											<a href="#" class="btn btn-icon btn-circle btn-label-facebook">
 												<i class="socicon-facebook"></i>
