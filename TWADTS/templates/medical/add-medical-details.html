@@ -1,0 +1,437 @@
+{% extends 'base.html' %}
+{% block title %}Add Medical Details{% endblock title %}
+
+{% block content %}
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+
+	<!-- begin:: Content Head -->
+	<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+		<div class="kt-subheader__main">
+			<h3 class="kt-subheader__title">
+			Add	Medical Details </h3>
+			<span class="kt-subheader__separator kt-hidden"></span>
+			<div class="kt-subheader__breadcrumbs">
+				<a href="user_dash/user_dashbord.html" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a  class="kt-subheader__breadcrumbs-link">
+					Medical</a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a href="user_dash/medical/add-medical-details.html" class="kt-subheader__breadcrumbs-link">
+				Add	Medical Details</a>
+				<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- end:: Content Head -->
+
+	<!-- begin:: Content -->
+	<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+		<div class="kt-portlet">
+			<div class="kt-portlet__body kt-portlet__body--fit">
+				<div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" data-ktwizard-state="step-first">
+					<div class="kt-grid__item">
+
+						<!--begin: Form Wizard Nav -->
+						<div class="kt-wizard-v3__nav">
+							<div class="kt-wizard-v3__nav-items">
+								<a class="kt-wizard-v3__nav-item"  data-ktwizard-type="step" data-ktwizard-state="current">
+									<div class="kt-wizard-v3__nav-body">
+										<div class="kt-wizard-v3__nav-label">
+											<span>1</span> General Info
+										</div>
+										<div class="kt-wizard-v3__nav-bar"></div>
+									</div>
+								</a>
+								<a class="kt-wizard-v3__nav-item"  data-ktwizard-type="step">
+									<div class="kt-wizard-v3__nav-body">
+										<div class="kt-wizard-v3__nav-label">
+											<span>2</span> Past Treatments
+										</div>
+										<div class="kt-wizard-v3__nav-bar"></div>
+									</div>
+								</a>
+								<a class="kt-wizard-v3__nav-item"  data-ktwizard-type="step">
+									<div class="kt-wizard-v3__nav-body">
+										<div class="kt-wizard-v3__nav-label">
+											<span>3</span> Genetic Disorder
+										</div>
+										<div class="kt-wizard-v3__nav-bar"></div>
+									</div>
+								</a>
+								<a class="kt-wizard-v3__nav-item"  data-ktwizard-type="step">
+									<div class="kt-wizard-v3__nav-body">
+										<div class="kt-wizard-v3__nav-label">
+											<span>4</span> Ongoing Medicine
+										</div>
+										<div class="kt-wizard-v3__nav-bar"></div>
+									</div>
+								</a>
+								<a class="kt-wizard-v3__nav-item"  data-ktwizard-type="step">
+									<div class="kt-wizard-v3__nav-body">
+										<div class="kt-wizard-v3__nav-label">
+											<span>5</span> Review and Submit
+										</div>
+										<div class="kt-wizard-v3__nav-bar"></div>
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<!--end: Form Wizard Nav -->
+					</div>
+					<div class="kt-grid__item kt-grid__item--fluid kt-wizard-v3__wrapper">
+
+						<!--begin: Form Wizard Form-->
+						<form class="kt-form" id="kt_form" method="post" enctype="multipart/form-data">
+							 {% csrf_token %}
+
+							<!--begin: Form Wizard Step 1-->
+							<div class="kt-wizard-v3__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+								<div class="kt-heading kt-heading--md">Setup Your General Information</div>
+								<div class="kt-form__section kt-form__section--first">
+									<div class="kt-wizard-v3__form">
+										<div class="form-group">
+											<label>Email</label>
+											<input class="form-control"  type="text" value="{{Email}}" name="Email" id="Id">
+										</div>
+										<div class="form-group">
+											<label>Complete Name</label>
+											<input class="form-control"  type="text" value="" id="Name" name="Name">
+										</div>
+										<div class="form-group">
+											<label >Enter Weight</label>
+											<input  type="text" class="form-control bootstrap-touchspin-vertical-btn" value="" name="Weight" id="Weight" placeholder="76" type="text">
+											<span class="form-text text-muted">Weight in KG </span>
+										</div>
+										<div class="form-group">
+											<label>Enter hight</label>
+											<input   type="text" class="form-control bootstrap-touchspin-vertical-btn" value="" name="Height" id="Height" placeholder="153" type="text">
+											<span class="form-text text-muted">Hight in CM </span>
+										</div>
+										<div class="form-group ">
+											<label>Blood Pressure</label>
+											<input class="form-control"  type="text" value="" name="Blood_Pressure" id="Blood_Pressure" >
+											<span class="form-text text-muted">132 Systolic blood pressure mmHg, diastolic blood pressure of 88 mmHg. </span>
+										</div>
+										<div class="form-group">
+											<label >Emergency Contact No</label>
+												<i class="la la-phone"></i>
+													<input type="text"  class="form-control" value="" name="Emergency_Contact" id="Emergency_Contact" placeholder="Phone" aria-describedby="basic-addon1">
+												<span class="form-text text-muted">We'll never share your email with anyone else.</span>
+										</div>
+										<div class="form-group">
+											<label >Address Line 1</label>
+											<input class="form-control" type="text" value="" name="Address1" id="Address1">
+										</div>
+										<div class="form-group">
+											<label >Address Line 2</label>
+											<input class="form-control"  type="text" value="" name="Address2" id="Address2">
+										</div>
+										<div class="form-group">
+											<label >City</label>
+											<input class="form-control"  type="text" value="City" name="City" id="City">
+										</div>
+										<div class="form-group">
+											<label >State / Province / Region</label>
+											<input class="form-control"  type="text" value="" name="State" id="State">
+										</div>
+										<div class="form-group">
+											<label class="col-3 col-form-label">Zip / Postal Code</label>
+											<input class="form-control" type="text" value="" name="Postal_Code" id="Postal_Code">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--end: Form Wizard Step 1-->
+
+							<!--begin: Form Wizard Step 2-->
+							<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+								<div class="kt-heading kt-heading--md">Past Treatments </div>
+								<div class="kt-form__section kt-form__section--first">
+									<div class="kt-wizard-v3__form">
+										<div class="form-group ">
+											<label>Past Treatment </label>
+												<div class="kt-radio-inline ">
+													<label class="kt-radio">
+														<input type="radio"  name="PastTreatment" value="yes"> Yes
+														<span></span>
+													</label>
+													<label class="kt-radio">
+														<input type="radio" checked="" name="PastTreatment" value="no"> No
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">PastTreatmentReport
+											<label>If Yes Describe Here..</label>
+											<textarea class="form-control" id="PTD" name="PastTreatmentDescription" maxlength="12" placeholder="if yes please Mention Your Past Treatment Record Here..." rows=""></textarea>
+										<div class="form-group">
+											<label>Upload Your Past Reports</label>
+											<div class="custom-file" >
+												<!--label>Upload Latest Reports</label-->
+												<input type="file" class="custom-file-input" id="PastReport" onchange="showPreview(this);" name="PastTreatmentReport">
+												<label class="custom-file-label" for="customFile">Choose file</label>
+											</div>
+										</div>
+										<div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div>
+										<div class="kt-heading kt-heading--md">Past Injuries </div>
+										<div class="form-group ">
+											<label>Past Injuries</label>
+												<div class="kt-radio-inline ">
+													<label class="kt-radio">
+														<input type="radio"  name="PastInjuries" value="yes"> Yes
+														<span></span>
+													</label>
+													<label class="kt-radio">
+														<input type="radio" checked="checked" name="PastInjuries" value="no"> No
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>If Yes Describe Here..</label>
+											<textarea class="form-control" id="PID" name="PastInjuriesDescriptions" maxlength="12" placeholder="if yes please Mention Your Past Injuries Record Here..." rows=""></textarea>
+										<div class="form-group">
+											<label>Upload Your Past Injury Reports</label>
+											<div class="custom-file" >
+												<!--label>Upload Latest Reports</label-->
+												<input type="file" class="custom-file-input" id="customFile" onchange="showReport(this)" name="PastInjuriesReport">
+												<label class="custom-file-label" for="customFile">Choose file</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--end: Form Wizard Step 2-->
+
+							<!--begin: Form Wizard Step 3-->
+							<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+								<div class="kt-heading kt-heading--md">Genetic Disorder</div>
+								<div class="kt-form__section kt-form__section--first">
+									<div class="kt-wizard-v3__form">
+										<div class="form-group ">
+											<label>Genetic Disorder</label>
+												<div class="kt-radio-inline ">
+													<label class="kt-radio">
+														<input type="radio"  name="GeneticDisorder" value="yes"> Yes
+														<span></span>
+													</label>
+													<label class="kt-radio">
+														<input type="radio" checked="checked" name="GeneticDisorder" value="no"> No
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>If Yes Describe Here..</label>
+											<textarea class="form-control" id="GDD" name="GeneticDisorderDescription" maxlength="12" placeholder="if yes please Mention Your Genetic Disorder Record Here..." rows=""></textarea>
+										<div class="form-group">
+											<label>Upload Your Genetic Disorder Reports</label>
+											<div class="custom-file" >
+												<!--label>Upload Latest Reports</label-->
+												<input type="file" class="custom-file-input" id="customFile" onchange="showGD(this)" name="GeneticDisorderReport">
+												<label class="custom-file-label" for="customFile">Choose file</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--end: Form Wizard Step 3-->
+
+							<!--begin: Form Wizard Step 4-->
+							<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+								<div class="kt-heading kt-heading--md">Currently  Pursuing Medicine </div>
+								<div class="kt-form__section kt-form__section--first">
+									<div class="kt-wizard-v3__form">
+										<div class="form-group ">
+											<label>Ongoing Medicine</label>
+												<div class="kt-radio-inline ">
+													<label class="kt-radio">
+														<input type="radio" name="CurrentlyPursuingMedicine" value="yes"> Yes
+														<span></span>
+													</label>
+													<label class="kt-radio">
+														<input type="radio" checked="checked" name="CurrentlyPursuingMedicine" value="no"> No
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>If Yes Describe Here..</label>
+											<textarea class="form-control" id="CPMD" name="CurrentlyPursuingMedicineDescription" maxlength="12" placeholder="if yes please Mention Your Medicine Here..." rows=""></textarea>
+										<div class="form-group">
+											<label>Upload Your Prescription Here...</label>
+											<div class="custom-file" >
+												<!--label>Upload Latest Reports</label-->
+												<input type="file" class="custom-file-input" id="customFile" onchange="showCPM(this)" name="CurrentlyPursuingMedicineReport">
+												<label class="custom-file-label" for="customFile">Choose file</label>
+											</div>
+										</div>
+										<div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div>
+										<div class="kt-heading kt-heading--md">Any Other Details </div>
+										<div class="form-group ">
+											<label>Other Details You Want To Tell Us </label>
+												<div class="kt-radio-inline ">
+													<label class="kt-radio">
+														<input type="radio"  name="OtherDetails" value="yes"> Yes
+														<span></span>
+													</label>
+													<label class="kt-radio">
+														<input type="radio" checked="checked"  name="OtherDetails" value="no"> No
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label>If Yes Describe Here Other Details...</label>
+											<textarea class="form-control" id="OD" name="OtherDetailsDescription" maxlength="12" placeholder="if yes please Mention Your Past Injuries Record Here..." rows=""></textarea>
+										<div class="form-group">
+											<label>Upload Your Reports</label>
+											<div class="custom-file" >
+												<!--label>Upload Latest Reports</label-->
+												<input type="file" class="custom-file-input" id="customFile" onchange="showOD(this)" accept="application/pdf" name="OtherDetailsReport">
+												<label class="custom-file-label" for="customFile">Choose file</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--end: Form Wizard Step 4-->
+
+							<!--begin: Form Wizard Step 5-->
+							<div class="kt-wizard-v3__content" data-ktwizard-type="step-content">
+								<div class="kt-heading kt-heading--md">Review your Details and Submit</div>
+								<div class="kt-form__section kt-form__section--first">
+									<div class="kt-wizard-v3__review">
+										<div class="kt-wizard-v3__review-item">
+											<div class="kt-wizard-v3__review-title">
+												General Info
+											</div>
+											<div class="kt-wizard-v3__review-content">
+												<p class="text-muted mb-0">
+													<dl class="row mb-0">
+												<dt class="col-sm-5">ID</dt><dd class="col-sm-7"><label ><span id="Id1"></span></label></dd>
+														<dt class="col-sm-5">Complete Name: </dt><dd class="col-sm-7"><label><span id="Name1"></span> </label></dd>
+												<dt class="col-sm-5"> Weight: </dt><dd class="col-sm-7"> <label ><span id="Weight1"></span> </label></dd>
+												<dt class="col-sm-5"> Weight: </dt><dd class="col-sm-7"> <label ><span id="Height1"></span> </label></dd>
+														<dt class="col-sm-5">Blood Pressure: </dt><dd class="col-sm-7"> <label><span id="Blood_Pressure1"></span> </label></dd>
+														<dt class="col-sm-5">Emergency Contact No :</dt><dd class="col-sm-7"><label><span id="Emergency_Contact1"></span> </label></dd>
+														<dt class="col-sm-5">Address Line1: </dt><dd class="col-sm-7"><label><span id="Address11"></span> </label> </dd>
+												<dt class="col-sm-5">Address Line2:</dt><dd class="col-sm-7"><label ><span id="Address21"></span></label> </dd>
+												<dt class="col-sm-5">city:</dt><dd class="col-sm-7"><label><span id="City1"></span> </label></dd>
+														<dt class="col-sm-5">State/Province/Region:</dt><dd class="col-sm-7"><label><span id="State1"></span> </label></dd>
+												<dt class="col-sm-5">Zip/Postal Code:</dt><dd class="col-sm-7"><label > <span id="Postal_Code1"></span></label> </dd>
+													</dl>
+												</p>
+											</div>
+										</div>
+										<div class="kt-wizard-v3__review-item">
+											<div class="kt-wizard-v3__review-title">
+												Past Treatments
+											</div>
+											<p class="text-muted mb-0">
+												<dl class="row mb-0">
+													<dt class="col-sm-5">Past Treatment:</dt><dd class="col-sm-7"><label><span id="PastTreatment1"></span> </label></dd>
+													<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7"><label><span id="PTD1"></span></label></dd>
+
+													<dt class="col-sm-5">Past Reports Uploaded:<dd class="col-sm-7"><button type="button"  onclick="pdfRender();" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button> <p id="demo1"></p> </dd>
+
+												</dl>
+											</p>
+										</div>
+										<div class="kt-wizard-v3__review-item">
+											<div class="kt-wizard-v3__review-title">
+												Past Injuries
+											</div>
+											<div class="kt-wizard-v3__review-content">
+												<p class="text-muted mb-0">
+													<dl class="row mb-0">
+														<dt class="col-sm-5">Past Injuries:</dt><dd class="col-sm-7"><label><span id="PastInjuries1"></span> </label></dd>
+												<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7"> <label><span id="PID1"></span> </label></dd>
+														<dt class="col-sm-5">Past Injurie Reports Uploaded:<dd class="col-sm-7"> <button type="button" onclick="pdfRender1();" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button><p id="demo2"></p> </dd>
+													</dl>
+												</p>
+											</div>
+										</div>
+										<div class="kt-wizard-v3__review-item">
+											<div class="kt-wizard-v3__review-title">
+												Genetic Disorder
+											</div>
+											<div class="kt-wizard-v3__review-content">
+												<p class="text-muted mb-0">
+													<dl class="row mb-0">
+														<dt class="col-sm-5">Genetic Disorder:</dt><dd class="col-sm-7"><label><span id="GeneticDisorder1"></span> </label></dd>
+														<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7"><label><span id="GDD1" ></span></label></dd>
+														<dt class="col-sm-5">Genetic Disorder Reports Uploaded:<dd class="col-sm-7"><button type="button" onclick="pdfRender2();" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button><p id="demo3" ></p>&nbsp;</dd>
+													</dl>
+												</p>
+											</div>
+										</div>
+										<div class="kt-wizard-v3__review-item">
+											<div class="kt-wizard-v3__review-title">
+												Currently Pursuing Medicine
+											</div>
+											<div class="kt-wizard-v3__review-content">
+												<p class="text-muted mb-0">
+													<dl class="row mb-0">
+														<dt class="col-sm-5">Ongoing Medicine:</dt><dd class="col-sm-7"><label><span id="CurrentlyPursuingMedicine1"></span> </label></dd>
+														<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7"><label><span id="CPMD1"></span> </label> </dd>
+														<dt class="col-sm-5">Upload Your Prescription:<dd class="col-sm-7"><button type="button" onclick="pdfRender3();" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button><p id="demo4"></p> &nbsp;</dd>
+													</dl>
+												</p>
+											</div>
+										</div>
+										<div class="kt-wizard-v3__review-item">
+											<div class="kt-wizard-v3__review-title">
+												Any Other Details
+											</div>
+											<p class="text-muted mb-0">
+												<dl class="row mb-0">
+											<dt class="col-sm-5">Other Details You Want To Tell Us:</dt><dd class="col-sm-7"><label><span id="OtherDetails1"></span> </label></dd>
+													<dt class="col-sm-5">if yes Described Here... :</dt><dd class="col-sm-7"><label><span id="OD1"></span> </label></dd>
+													<dt class="col-sm-5">Your Reports: <dd class="col-sm-7">&nbsp;<button type="button" onclick="pdfRender4();" class="btn btn-outline-hover-info btn-elevate btn-pill"><i class="flaticon-eye"></i>View Document</button><p id="demo5"></p> </dd>
+												</dl>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							{{msg}}
+
+							<!--end: Form Wizard Step 5-->
+
+							<!--begin: Form Actions -->
+							<div class="kt-form__actions">
+								<div class="btn btn-secondary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+									Previous
+								</div>
+								<div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-submit">
+									Submit
+								</div>
+								<div class="btn btn-brand btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next" onclick="show();">
+									Next Step
+								</div>
+							</div>
+
+							<!--end: Form Actions -->
+						</form>
+
+						<!--end: Form Wizard Form-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock content %}
