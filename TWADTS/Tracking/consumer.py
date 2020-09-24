@@ -3,6 +3,10 @@ from Users.views import UserName
 import json
 import time
 from twilio.rest import Client
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
+
 class DashConsumer(AsyncWebsocketConsumer):
     start_time=time.time()
     a=1
@@ -45,25 +49,37 @@ class DashConsumer(AsyncWebsocketConsumer):
         v_lat = event['lat']
         v_lng = event['lng']
 
-        a=DashConsumer.a+1
+        b=DashConsumer.a+1
 
 
 
-        DashConsumer.a=a
-        if a > 100:
+        DashConsumer.a=b
+        if DashConsumer.a >= 10:
             try:
                 user=UserName.UserName
                 print(user)
                 print('send')
                 account_sid = 'ACd5c22e88b4381dcdc0b13269da13013b'
-                auth_token = '0b680419a15c8d6662d2d9e5ceeb06fb'
+                auth_token = '09d003112cb2f1f76542e9e5fbe818ff'
                 client = Client(account_sid, auth_token)
 
                 message = client.messages.create(
                         from_='+18155818564',
-                        body=" Dear  "+user+" Your Longitude:"+v_lng+" and latitude "+v_lat,
-                        to='+919970869905   '
+                        # body=' Dear '+ str(user) +' Your Longitude:'+str(v_lng)+' and latitude '+ str(v_lat),
+                        body ='Dear'+ str(user)+', http://www.google.com/maps/place/'+str(v_lat)+','+str(v_lng),
+                        to='+919970869905'
                 )
+
+                subject = 'Two wheeler Location'
+                print(user,v_lng,v_lat)
+                # message = ' Dear '+ user +' Your Longitude:'+v_lng+' and latitude '+ v_lat
+                message ='Dear'+ str(user)+', http://www.google.com/maps/place/'+str(v_lat)+','+str(v_lng)
+                
+                email_from = settings.EMAIL_HOST_USER
+                recipient_list = [user]
+                send_mail( subject, message, email_from, recipient_list, fail_silently=False )
+                print('email sent', user)
+
                 DashConsumer.a=1
 
             except :
