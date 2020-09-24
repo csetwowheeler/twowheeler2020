@@ -1,0 +1,120 @@
+{% extends 'user_settings/user_setting_base.html' %}
+
+{% block user_profile_content %}
+
+<!--Begin:: App Content-->
+<div class="kt-grid__item kt-grid__item--fluid kt-app__content">
+	<div class="row">
+		<div class="col-xl-12">
+			<div class="kt-portlet kt-portlet--height-fluid">
+				<div class="kt-portlet__head">
+					<div class="kt-portlet__head-label">
+						<h3 class="kt-portlet__head-title">Email Notifications <small>control when and how often Metronic sends emails to you</small></h3>
+					</div>
+				</div>
+				<form class="kt-form kt-form--label-right">
+					<div class="kt-portlet__body">
+						<div class="kt-section kt-section--first">
+							<div class="kt-section__body">
+								<div class="row">
+									<label class="col-xl-3"></label>
+									<div class="col-lg-9 col-xl-6">
+										<h3 class="kt-section__title kt-section__title-sm">Setup Email Notification:</h3>
+									</div>
+								</div>
+								<div class="form-group form-group-sm row">
+									<label class="col-xl-3 col-lg-3 col-form-label">Email Notification</label>
+									<div class="col-lg-9 col-xl-6">
+										<span class="kt-switch">
+											<label>
+												<input type="checkbox" checked="checked" name="email_notification_1" required>
+												<span></span>
+											</label>
+										</span>
+									</div>
+								</div>
+								<div class="form-group form-group-last row">
+									<label class="col-xl-3 col-lg-3 col-form-label">Send Copy To Personal Email</label>
+									<div class="col-lg-9 col-xl-6">
+										<span class="kt-switch">
+											<label>
+												<input type="checkbox" name="email_notification_2" required>
+												<span></span>
+											</label>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="kt-separator kt-separator--border-dashed kt-separator--portlet-fit kt-separator--space-lg"></div>
+						<div class="kt-section kt-section--first">
+							<div class="kt-section__body">
+								<div class="row">
+									<label class="col-xl-3"></label>
+									<div class="col-lg-9 col-xl-6">
+										<h3 class="kt-section__title kt-section__title-sm">Activity Related Emails:</h3>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-xl-3 col-lg-3 col-form-label">When To Email</label>
+									<div class="col-lg-9 col-xl-6">
+										<div class="kt-checkbox-list">
+											<label class="kt-checkbox">
+												<input type="checkbox" required> You have new notifications.
+												<span></span>
+											</label>
+											<label class="kt-checkbox">
+												<input type="checkbox"> You're sent a direct message
+												<span></span>
+											</label>
+											<label class="kt-checkbox">
+												<input type="checkbox" required checked="checked"> Someone adds you as a connection
+												<span></span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group form-group-last row">
+									<label class="col-xl-3 col-lg-3 col-form-label">When To Escalate Emails</label>
+									<div class="col-lg-9 col-xl-6">
+										<div class="kt-checkbox-list">
+											<label class="kt-checkbox kt-checkbox--brand">
+												<input type="checkbox" required> Upon new order.
+												<span></span>
+											</label>
+											<label class="kt-checkbox kt-checkbox--brand">
+												<input type="checkbox"> New membership approval
+												<span></span>
+											</label>
+											<label class="kt-checkbox kt-checkbox--brand">
+												<input type="checkbox"  required checked="checked"> Member registration
+												<span></span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="kt-portlet__foot">
+						<div class="kt-form__actions">
+							<div class="row">
+								<div class="col-lg-3 col-xl-3">
+								</div>
+								<div class="col-lg-9 col-xl-9">
+									<button type="reset" class="btn btn-brand btn-bold">Save</button>&nbsp;
+									<button type="reset" class="btn btn-secondary">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--End:: App Content-->
+</div>
+
+{% endblock user_profile_content %}

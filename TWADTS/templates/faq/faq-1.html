@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+{% block title %} FAQ {% endblock title %}
+{% block content %}
+
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+
+	<!-- begin:: Subheader -->
+	<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+		<div class="kt-subheader__main">
+			<h3 class="kt-subheader__title">
+				FAQ</h3>
+			<span class="kt-subheader__separator kt-hidden"></span>
+			<div class="kt-subheader__breadcrumbs">
+				<a href="{% url 'Main:user_dashbord' %}" class="kt-subheader__breadcrumbs-home"><i class="flaticon2-shelter"></i></a>
+				<span class="kt-subheader__breadcrumbs-separator"></span>
+				<a href="{% url 'Main:faq' %}" class="kt-subheader__breadcrumbs-link">
+					FAQ</a>
+
+				<!-- <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- end:: Subheader -->
+
+	<!-- begin:: Content -->
+	<div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+
+		<!--begin::Portlet-->
+		<div class="kt-portlet kt-faq-v1">
+			<div class="kt-portlet__head">
+				<div class="kt-portlet__head-label">
+					<h3 class="kt-portlet__head-title">
+						FAQ
+					</h3>
+				</div>
+			</div>
+			<div class="kt-portlet__body">
+				<div class="row">
+					<div class="col-xl-9">
+						<div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample1">
+							<div class="card">
+								<div class="card-header" id="headingOne">
+									<div class="card-title" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+										1. What is VADS?
+									</div>
+								</div>
+								<div id="collapseOne1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample1" style="">
+									<div class="card-body">
+										<p>
+											VADS stands for Vehicle Accident Detection System. We ensure people have a safe ride and we help tracking and monitoring the vehicle of your dear ones.															</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+										2. What services do VADS provide? VADS provides services like :-
+									</div>
+								</div>
+								<div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo1" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>Live Tracking</p>
+										<p>Message Alert</p>
+										<p>E-mail Alert</p>
+										<p>Crash Detection</p>
+										<p>Parental Logins</p>
+										<p>Insurance Claims</p>
+										<p>Hospital Claims</p>
+										</p>Roadside Assistance etc</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingThree1">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
+										3. Is VADS free?
+									</div>
+								</div>
+								<div id="collapseThree1" class="collapse" aria-labelledby="headingThree1" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											No. VADS is not a free service. Once you are done with the trial, you have to pay for further services.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingFour">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+										4. Can I choose the services provided in custom manner?
+									</div>
+								</div>
+								<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											Yes. You can choose the services as per your wish.</p>														</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingFive">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										5. Is VADS safe?
+									</div>
+								</div>
+								<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											Yes. VADS is safe by all means. Your data is safe with us.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingsix">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+										6. What hardware do we get from VADS?
+									</div>
+								</div>
+								<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											You will be provided with a hardware kit according to the services you choose.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingSeven">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+										7. Is VADS compatible for both Android and iOS? Currently we are only working on website.
+									</div>
+								</div>
+								<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											You will be provided with a hardware kit according to the services you choose.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingEight">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+										8. How do I contact to VADS for any queries?
+									</div>
+								</div>
+								<div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											You can contact us by writing your queries on the feedback page.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingNine">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+										9. Do I need to put my location ON  24/7?
+									</div>
+								</div>
+								<div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											No. You need to switch ON your location only when using the services like tracking, monitoring, Parental Control, etc.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTen">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+										10. Is VADS compatible with all vehicles?
+									</div>
+								</div>
+								<div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											No. VADS is compatible only with two-wheelers.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading11">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+										11. Do you provide free trial service?
+									</div>
+								</div>
+								<div id="collapse11" class="collapse" aria-labelledby="heading11" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											Yes. We do provide a free trial with limited services and for limited amount of time.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading12">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+										12. How do I become a premium member of VADS?
+									</div>
+								</div>
+								<div id="collapse12" class="collapse" aria-labelledby="heading12" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											You can do so by selecting the premium package while becoming a member.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading13">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+										13. How long do I have access to my data?
+									</div>
+								</div>
+								<div id="collapse13" class="collapse" aria-labelledby="heading13" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											As long as you are an active customer you have access to your data.
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading14">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
+										14. How can I track my vehicle from my mobile phone?														</div>
+									</div>
+								<div id="collapse14" class="collapse" aria-labelledby="heading14" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											By clicking the “Track” button and by switching the hardware and location ON.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="heading15">
+									<div class="card-title collapsed" data-toggle="collapse" data-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
+										15. What special services do I get if I am a premium member of VADS?
+									</div>
+								</div>
+								<div id="collapse15" class="collapse" aria-labelledby="heading15" data-parent="#accordionExample1">
+									<div class="card-body">
+										<p>
+											Roadside Assistance, Insurance claims, 24/7 support are some of the services which premium members will get.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--end::Portlet-->
+	</div>
+
+	<!-- end:: Content -->
+</div>
+
+{% endblock content %}
