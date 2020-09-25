@@ -143,13 +143,13 @@
 								</div>
 
 								<!--begin::Form-->
-								<form class="kt-form" action="{% url 'Users:login' %}" novalidate="novalidate" method="POST">
+								<form class="kt-form" action="{% url 'Users:login' %}" method="POST">
 									 {% csrf_token %}
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Email" name="Email" autocomplete="off">
+										<input class="form-control" type="text" placeholder="Email" name="Email" autocomplete="off" required />
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="password" placeholder="Password" name="Password">
+										<input class="form-control" type="password" placeholder="Password" name="Password" required />
 									</div>
 
 									<!--begin::Action-->

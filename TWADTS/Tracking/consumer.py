@@ -66,14 +66,14 @@ class DashConsumer(AsyncWebsocketConsumer):
                 message = client.messages.create(
                         from_='+18155818564',
                         # body=' Dear '+ str(user) +' Your Longitude:'+str(v_lng)+' and latitude '+ str(v_lat),
-                        body ='Dear'+ str(user)+', http://www.google.com/maps/place/'+str(v_lat)+','+str(v_lng),
+                        body ='Dear '+ str(user)+', http://www.google.com/maps/place/'+str(v_lat)+','+str(v_lng),
                         to='+919970869905'
                 )
 
                 subject = 'Two wheeler Location'
                 print(user,v_lng,v_lat)
                 # message = ' Dear '+ user +' Your Longitude:'+v_lng+' and latitude '+ v_lat
-                message ='Dear'+ str(user)+', http://www.google.com/maps/place/'+str(v_lat)+','+str(v_lng)
+                message ='Dear '+ str(user)+', http://www.google.com/maps/place/'+str(v_lat)+','+str(v_lng)
                 
                 email_from = settings.EMAIL_HOST_USER
                 recipient_list = [user]

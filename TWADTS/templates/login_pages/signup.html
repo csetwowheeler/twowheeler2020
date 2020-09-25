@@ -142,27 +142,27 @@
 								</div>
 
 								<!--begin::Form-->
-								<form class="kt-form" action="/Signup/" novalidate="novalidate" method="post">
+								<form class="kt-form" action="/Signup/"  method="post">
 									{% csrf_token %}
                                     <div class="form-group">
-										<input class="form-control" type="text" placeholder="First Name" name="Fname">
+										<input class="form-control" type="text" placeholder="First Name" name="Fname" required>
                                     </div>
                                     <div class="form-group">
-										<input class="form-control" type="text" placeholder="Last Name" name="Lname">
+										<input class="form-control" type="text" placeholder="Last Name" name="Lname" required>
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="text" placeholder="Email" name="Email" autocomplete="off">
+										<input class="form-control" type="text" placeholder="Email" name="Email" autocomplete="off" required>
 									</div>
 									<div class="form-group">
-										<input class="form-control" type="password" placeholder="Password" name="Password1">
+										<input class="form-control" type="password" placeholder="Password" name="Password1" required>
                                     </div>
                                     <div class="form-group">
-										<input class="form-control" type="password" placeholder="Confirm Password" name="Password2">
+										<input class="form-control" type="password" placeholder="Confirm Password" name="Password2" required>
                                     </div>
 									<!--begin::Action-->
 									<div class="kt-login__actions">
                                         <label class="kt-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" required>
 
 
                                                 Accept Terms And Conditions
